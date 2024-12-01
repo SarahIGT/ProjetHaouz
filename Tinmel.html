@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Comparaison ElHaouz - Tinmel</title> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="juxtapose/css/juxtapose.css">
+    <link rel="stylesheet" href="styleprinci.css">  
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <style>
+        #map {
+            position: fixed;
+            top: 50%;
+            left: 13%;
+            width: 15%; /* La carte occupe 15% de la largeur de l'écran */
+            height: 60%; /* 60% de la hauteur de l'écran */
+            transform: translate(-50%, -50%);
+            background-color: #178582;
+            padding: 20px;
+            border-radius: 10px;
+			border: 5px solid #178582;
+        }
+		
+	        /* Style du rectangle pour les statistiques */
+        #stats {
+            position: fixed;
+            top: 50%;
+            left: 87%; /* 20% à droite de la carte */
+            width: 15%; /* Même largeur que la carte */
+            height: 60%; /* Même hauteur que la carte */
+            transform: translate(-50%, -50%);
+            background-color: #ffe3d5;
+            padding: 20px;
+            border-radius: 10px;
+            border: 5px solid #178582;
+            overflow-y: auto; /* Permet de faire défiler le contenu si nécessaire */
+        }
+
+        /* Style pour le texte des statistiques */
+        .stat-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    </style>  
+</head>
+
+<body>
+    <h1 class="title">DOUAR Tinmel</h1>
+	
+    <div class="juxtapose">
+        <img src="Images/Tinmel_Avant.jpg" data-label="Avant" alt="Avant">
+        <img src="Images/Tinmel_Apres.jpg" data-label="Après" alt="Après">
+    </div>
+    <script src="juxtapose/js/juxtapose.js?v=8"></script>
+    <div id="map"></div>
+	
+<!-- Rectangle pour la vidéo YouTube -->
+<div id="stats">
+    <h2>Pour voir du plus près:</h2>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/KowCyjDfHLA?si=Z_eNfWcybLNKgRz8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialisation de la carte et centrage sur Commune Tlat N'Yaacoub
+        var map = L.map('map').setView([30.985305, -8.226658], 12);
+
+        // Ajout d'un fond de carte OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Ajout d'un marqueur à Commune Tlat N'Yaacoub
+        var marker = L.marker([30.985305, -8.226658], { title: "Douar Tinmel, El Haouz" }).addTo(map);
+
+        // Ajout d'une popup au marqueur
+        marker.bindPopup("Douar Tinmel, El Haouz").openPopup();
+    </script>
+</body>
+
+</html>

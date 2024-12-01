@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+#map {
+  position: fixed;
+  top: 50%;
+  left: 15%;
+  width: 15%; /* The map takes up 25% of the screen's width */
+  height: 60%; /* Full height of the screen */
+  transform: translate(-50%, -50%); /* Moves the div back by half of its own width and height */
+  background-color: #178582;
+  padding: 20px;
+  border-radius: 10px;
+  
+
+}
