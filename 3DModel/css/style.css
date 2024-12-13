@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f4f4f4; /* Couleur de fond plus douce pour le contraste */
+  color: #333; /* Couleur du texte par défaut */
+}
+
+header {
+  margin-top: 3em;
+  text-align: center;
+  color: #000;
+}
+
+header h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0;
+  color: #5c3815; /* Couleur de texte agréable, ici vert */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre légère */
+}
+
+#container3D canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: -1; /* S'assurer que le canvas est derrière les autres éléments */
+  background: linear-gradient(135deg, #ffff, #e3d5a8); /* Dégradé comme arrière-plan par défaut */
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+    padding: 0 1em; /* Ajout de marges pour le texte */
+  }
+}
+
+/* Ajout de quelques styles pour améliorer l'aspect global */
+header p {
+  margin-top: 0.5em;
+  font-size: 1.2em;
+  color: #555; /* Couleur grise pour un contraste subtil */
+}
